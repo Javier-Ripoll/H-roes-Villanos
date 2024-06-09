@@ -20,3 +20,6 @@ Cómo Jugar:
 -Emparejar: Una vez que las cartas se den la vuelta, estarán boca abajo. Deberás seleccionar dos cartas para darles la vuelta nuevamente. Si forman un par, se quedarán boca arriba; si no, volverán a su posición boca abajo y tendrás que seguir intentando.
 
 -Gana el Juego: El juego termina cuando hayas emparejado todas las cartas del tablero.
+
+
+Juego Sin terminar
