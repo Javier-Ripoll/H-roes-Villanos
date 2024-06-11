@@ -13,7 +13,7 @@
         <div id="transparent">
             <p id="error"></p>
             <!--Formulario de Entrada -->
-            <form action="juego.html" id="formEntrada"></form>
+            <form action="juego.html" id="formEntrada">
                 <!--Nick-->
                 <div class="itemform">
                     <label for="nick">Nick</label>
@@ -47,7 +47,7 @@
                 <div id="juntos">    
                     <div id="avatarImg">
                         <div>
-                            <img src="./imagenes/oscuro.png" alt=""  width="70" >
+                            <img src="./imagenes/oscuro.png" alt=""  width="70" id="avatarcontainer">
                         </div>
                     </div>
                     <!--Imagenes a elegir-->
@@ -72,12 +72,13 @@
                         </div>
                     </div>
                 </div>
-                </div>
                 <div>
                     <input type="submit" id="btn">
                 </div>
+            </form>
             </div>
     </main>
+    <script src="./JavaScript/datosUsuarios.js"></script>
     <script src="./JavaScript/app.js"></script>
 </body>
 </html>
