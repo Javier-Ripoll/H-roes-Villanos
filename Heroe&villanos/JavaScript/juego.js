@@ -1,4 +1,4 @@
-let tamanoPanel;
+
 function getrandomItgem(max){ //nuemero RANDOME
     return Math.floor(Math.random() * max)
 }
@@ -25,18 +25,18 @@ function pintarPanel(){
     //Elementos de forma automatica
     let items="";
     let itembocabajo = "";
-    let src2 = ["./imagenes/bocaAbajo.jpg" ]
+
     //lista de src para ir cambiando cada vez que se recargue la pagina
     let imgsrc = ["./imagenes/spidermancard.jpg","./imagenes/supermanCard.jpg","./imagenes/ironmanCard.jpg","./imagenes/DeadPoolCard.jpg"];
     let randomNumber = 0;
     for (let index = 0; index<parseInt(tamano)* parseInt(tamano); index++){
         randomNumber = getrandomItgem(4);
-        itembocabajo += `<div id="${imgsrc[randomNumber]}" class="itembocabajo"><img src="${src2}"  width="100px"></div>`
-        items +=`<div id="${imgsrc[randomNumber]}" class="item"><img src="${imgsrc[randomNumber]}"  width="100px"></div>`
+        itembocabajo += `<div id="${imgsrc[randomNumber]}" class="itembocabajo"><img src="./imagenes/bocaAbajo.jpg" alt=""  width="100px"></div>`
+        items +=`<div id="${imgsrc[randomNumber]}" class="item"><img src="${imgsrc[randomNumber]}" alt="" width="100px"></div>`
         
     }
-    document.getElementById('cartasbocabajo').innerHTML=itembocabajo
-    document.getElementById('juego').innerHTML=items    
+    document.getElementById('cartasbocabajo').innerHTML=`${itembocabajo}`
+    document.getElementById('juego').innerHTML=`${items}`    
     IDinterval= setInterval(cuentaAtras, 1000)
 }
 //Esta funcion esta principalmente para: Dependiendo la dificultad se visualizaran las cartas x segundos 
@@ -79,22 +79,20 @@ function cuentaAtras(){
     //Despues de que se haya hecho la cuenta atras dependiendo de la dificultad se programan los eventos 
     programarEventos()
 }
-
 //Aqui deberiamos pinchar la carta boca abajo
 function programarEventos(){
     let itembocabajo = document.getElementsByClassName('itembocabajo')
     for (let item of itembocabajo){
         item.addEventListener('click',clickImagenes)
     }
-    
 }
 //Eventos del juego 
 function clickImagenes(event){
-    event.preventDefault()
     let item = event.target;
-    let Carta1 = document.getElementById('juego')
+    let Carta1 = event.target.parentElement
     //cada vez que se hace click se cambia
-    item.src = Carta1.src
+    item.src = Carta1.src;
+    console.log(Carta1.id);
 
 }
 //capturamos Datos
@@ -108,3 +106,4 @@ pintarPanel()
 //Comenzar Juego
 
 //Crear eventos del juego 
+
