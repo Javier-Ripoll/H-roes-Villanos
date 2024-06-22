@@ -1,3 +1,4 @@
+let puntuacionJuego;
 
 function getrandomItgem(max){ //nuemero RANDOME
     return Math.floor(Math.random() * max)
@@ -6,7 +7,9 @@ function rellenarForm(){
     document.getElementById('nickJuego').value=nick
     document.getElementById('avatarJuego').src=avatar
     document.getElementById('dificultadJuego').value=dificultad
+    puntuacionJuego = parseInt(document.getElementById('puntuacion'))
     tamanoPanel = parseInt(tamano)
+
     //igualamos la dificultad a un valor antes de empezar, esto hara que tendran un tiempo las cartas visibles al principio
     if(dificultad == "Baja"){
         document.getElementById('tiempo').value= "10"
@@ -25,7 +28,6 @@ function pintarPanel(){
     //Elementos de forma automatica
     let items="";
     let itembocabajo = "";
-
     //lista de src para ir cambiando cada vez que se recargue la pagina
     let imgsrc = ["./imagenes/spidermancard.jpg","./imagenes/supermanCard.jpg","./imagenes/ironmanCard.jpg","./imagenes/DeadPoolCard.jpg"];
     let randomNumber = 0;
@@ -33,7 +35,6 @@ function pintarPanel(){
         randomNumber = getrandomItgem(4);
         itembocabajo += `<div id="${imgsrc[randomNumber]}" class="itembocabajo"><img src="./imagenes/bocaAbajo.jpg" alt=""  width="100px"></div>`
         items +=`<div id="${imgsrc[randomNumber]}" class="item"><img src="${imgsrc[randomNumber]}" alt="" width="100px"></div>`
-        
     }
     document.getElementById('cartasbocabajo').innerHTML=`${itembocabajo}`
     document.getElementById('juego').innerHTML=`${items}`    
@@ -82,19 +83,25 @@ function cuentaAtras(){
 //Aqui deberiamos pinchar la carta boca abajo
 function programarEventos(){
     let itembocabajo = document.getElementsByClassName('itembocabajo')
+
     for (let item of itembocabajo){
-        item.addEventListener('click',clickImagenes)
-    }
+        item.addEventListener('click',clickImagenes)    
+    } 
 }
 //Eventos del juego 
 function clickImagenes(event){
     let item = event.target;
-    let Carta1 = event.target.parentElement
+    let card = event.target.parentElement
+    let array = []
     //cada vez que se hace click se cambia
-    item.src = Carta1.src;
-    console.log(Carta1.id);
+    item.src = ""
+    console.log(card.id); //Nos indica la carta que hay debajo de esa 
+    console.log(array);
+    //comprobacion del array
 
+    
 }
+
 //capturamos Datos
 recogerDatos()
 //Comprobar Datos
@@ -106,4 +113,3 @@ pintarPanel()
 //Comenzar Juego
 
 //Crear eventos del juego 
-
