@@ -93,11 +93,22 @@ function clickImagenes(event){
     let item = event.target;
     let card = event.target.parentElement
     let array = []
-    //cada vez que se hace click se cambia
+    /*
+    cada vez que se hace click se cambia a la carta que hay abajo, por eso no lo 
+    igualamos a ningun src ya que las cartas boca abajo estan encima de las carta boca arriba
+    */
     item.src = ""
     console.log(card.id); //Nos indica la carta que hay debajo de esa 
     console.log(array);
-    //comprobacion del array
+    //comprobacion del array 
+    //aqui tenemos que pushear el card.id a un array para comprobar la posicion 0 y uno del array 
+    /*
+    if (array[0] === array[1]){
+            parseInt(document.getElementById("puntuacion").value)+1
+    
+    }
+    
+    */
 
     
 }
