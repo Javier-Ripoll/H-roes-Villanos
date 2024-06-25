@@ -105,8 +105,15 @@ function ComprobacionDeCartas(card,marcado,item){
     }else {
         marcado.push(card.id)  
     }
-
-
+    /* he probado con esto tambien 
+    *
+    * if(array[0]!== array[1]){
+    *.  que se cambie la imagen no me acuerdo exacto 
+    *.  lo estiy hacekndk desde el movil 
+    * }
+    *
+    */
+    //Esto es lo que te digo que ha sido una prueba
     if (array.length == 2){
         let firstCard = document.getElementById(array[0]);
         let SecondCard =document.getElementById(array[1]);
@@ -119,6 +126,7 @@ function ComprobacionDeCartas(card,marcado,item){
             SecondCard.querySelector('img').src = "./imagenes/bocaAbajo.jpg"
         }
     }
+    //esto si que esta bien 👇
     if (array.length >1) {
             array=[];       
     }
