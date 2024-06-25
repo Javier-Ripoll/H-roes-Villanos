@@ -1,5 +1,7 @@
 let puntuacionJuego;
-
+let card;
+let array= [];
+let marcado;
 function getrandomItgem(max){ //nuemero RANDOME
     return Math.floor(Math.random() * max)
 }
@@ -7,7 +9,6 @@ function rellenarForm(){
     document.getElementById('nickJuego').value=nick
     document.getElementById('avatarJuego').src=avatar
     document.getElementById('dificultadJuego').value=dificultad
-    puntuacionJuego = parseInt(document.getElementById('puntuacion'))
     tamanoPanel = parseInt(tamano)
 
     //igualamos la dificultad a un valor antes de empezar, esto hara que tendran un tiempo las cartas visibles al principio
@@ -83,36 +84,47 @@ function cuentaAtras(){
 //Aqui deberiamos pinchar la carta boca abajo
 function programarEventos(){
     let itembocabajo = document.getElementsByClassName('itembocabajo')
-
     for (let item of itembocabajo){
-        item.addEventListener('click',clickImagenes)    
+        item.addEventListener('click',clickImagenes)   
     } 
 }
 //Eventos del juego 
 function clickImagenes(event){
     let item = event.target;
-    let card = event.target.parentElement
-    let array = []
-    /*
-    cada vez que se hace click se cambia a la carta que hay abajo, por eso no lo 
-    igualamos a ningun src ya que las cartas boca abajo estan encima de las carta boca arriba
-    */
+    card = event.target.parentElement
+    marcado= []
+    //cada vez que se hace click se cambia
     item.src = ""
-    console.log(card.id); //Nos indica la carta que hay debajo de esa 
-    console.log(array);
-    //comprobacion del array 
-    //aqui tenemos que pushear el card.id a un array para comprobar la posicion 0 y uno del array 
-    /*
-    if (array[0] === array[1]){
-            parseInt(document.getElementById("puntuacion").value)+1
-    
+    ComprobacionDeCartas(card,marcado,item)
+}
+function ComprobacionDeCartas(card,marcado,item){
+   //ponemos los src en distintos arrays para luego comparar
+    if (marcado.length === 0) {
+        marcado.push(card.id)
+        array.push(marcado)
+    }else {
+        marcado.push(card.id)  
     }
-    
-    */
 
+
+    if (array.length == 2){
+        let firstCard = document.getElementById(array[0]);
+        let SecondCard =document.getElementById(array[1]);
+        
+        // cogemos del id solamente la imagen
+        let firstCardImg= firstCard.querySelector('img').src;
+        let SecondCardImg = SecondCard.querySelector('img').src;
+        if (firstCardImg !== SecondCardImg){
+            firstCard.querySelector('img').src = "./imagenes/bocaAbajo.jpg"
+            SecondCard.querySelector('img').src = "./imagenes/bocaAbajo.jpg"
+        }
+    }
+    if (array.length >1) {
+            array=[];       
+    }
+    console.log(array);
     
 }
-
 //capturamos Datos
 recogerDatos()
 //Comprobar Datos
@@ -124,3 +136,4 @@ pintarPanel()
 //Comenzar Juego
 
 //Crear eventos del juego 
+
