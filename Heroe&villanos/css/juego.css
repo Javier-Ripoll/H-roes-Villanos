@@ -1,0 +1,87 @@
+/*CSS del juego*/
+/*Especifico*/
+body{
+    background-color: rgb(230, 227, 227);
+}
+main{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+input[type="text"]{
+    border: 1px solid rgb(178, 175, 175);
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: 20px;
+    padding-left: 20px;
+
+}
+form img{
+    display: block;
+    margin: 0px 0px 10px 0px;
+    padding-left: 70px;
+    margin-right: 15px;   
+
+}
+form label{
+    display: block;   
+    margin-bottom: 10px;
+
+}
+/*Id y Clases*/
+#contenedorjuego{
+    display: flex;
+    width: 600px;
+    background-color: white;
+    align-content: center;
+    align-items: center;
+    margin-left: 20px;
+    border-radius: 10px ;
+
+}
+
+#juego{
+    float: left;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 500px;
+    min-height: 400px;
+    margin-right: 10px;
+    margin-left: 20px;
+    padding: 10px 0px 10px 20px;
+    transition: 0.8s;
+}
+.item{
+    margin:5px 5px 5px 5px  ;
+}
+/*Cartas boca abajo*/
+#cartasbocabajo{
+    position: absolute;
+    float: left;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    width: 500px;
+    min-height: 400px;
+    margin-right: 10px;
+    margin-left: 20px;
+    padding: 10px 0px 10px 20px;
+}
+.itembocabajo{
+    margin:5px 5px 5px 5px  ;
+}
