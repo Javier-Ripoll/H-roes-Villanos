@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imagenes/heroe.png">
+    <title>Héroes & Villanos</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/juego.css">
+</head>
+<body>
+    <main>
+        <!--Tendremos que hacer el panel automatico-->
+        <div id="contenedorjuego">
+            <div id="cartasbocabajo">
+                
+            </div>
+            <div id="juego" id="cartasbocabajo">
+                <!--<div class="imagenes"><div class="item"><img src="" alt="" width="100px"></div></div>-->
+               
+
+
+            <!--Aqui tendremos el boton de jugar otra vez-->
+            </div>
+        </div>
+        <form action="juego.html">
+            <!--Avatar & Nick -->
+            <div class="itemform">
+                <img src="./imagenes/mascara.png" alt="" width="80" id="avatarJuego">
+                <label for="nickJuego">Nick</label>
+                <input type="text" id="nickJuego" value="Nick" readonly >
+            </div>
+            <!--Dificultad-->
+            <div class="itemform">
+                <label for="dificultadJuego">Dificultad</label>
+                <input type="text" id="dificultadJuego" value="x" readonly>
+            </div>
+            <!--Tiempo-->
+            <div class="itemform">
+                <label for="tiempo">Tiempo</label>
+                <input type="text" id="tiempo" value="0" readonly>
+            </div>
+            <!--Puntuacion-->
+            <div>
+                <label for="puntuacion">Puntuación</label>
+                <input type="text" id="puntuacion" value="0" readonly>
+            </div>
+        </form>
+    </main>
+    <script src="./JavaScript/datosUsuarios.js"></script>
+    <script src="./JavaScript/juego.js"></script>
+</body>
+</html>

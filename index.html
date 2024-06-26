@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imagenes/heroe.png">
+    <title>Héroes & Villanos</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+        <div id="transparent">
+            <p id="error"></p>
+            <!--Formulario de Entrada -->
+            <form action="juego.html" id="formEntrada">
+                <!--Nick-->
+                <div class="itemform">
+                    <label for="nick">Nick</label>
+                    <input type="text" name="nick" id="nick" placeholder="Introduce un Nombre" minlength="4" maxlength="15" required >
+                </div>
+                <!--Dificultad-->   
+                <div class="itemform">
+                    <label for="dificultad">Dificultad</label> 
+                    <select name="dificultad" id="dificultad">
+                        <option value="">Seleciona la Dificultad</option>
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+                <!--Tamaño del Panel-->
+                <div class="itemform">
+                    <label for="tamano">Tamaño del Panel</label>
+                    <select name="tamano" id="tamano">
+                        <option value="">Selecciona el Tamaño</option>
+                        <option value="3">3x3</option>
+                        <option value="4">4x4</option>
+                        <option value="5">5x5</option>
+                    </select>
+                
+                <!--Drag & Drop Avatar-->
+                    <!--Imagen Principala-->
+                <div id="avatar">
+                    <p>Avatar</p>
+                </div>
+                <div id="juntos">    
+                    <div id="avatarImg">
+                        <div>
+                            <img src="./imagenes/oscuro.png" alt=""  width="70" id="avatarcontainer">
+                        </div>
+                    </div>
+                    <!--Imagenes a elegir-->
+                    <div id="avatargrid">
+                        <div class="avatarItem">
+                            <img src="./imagenes/craneo (1).png" alt="" width="50" draggable="true">
+                        </div>
+                        <div class="avatarItem">
+                            <img src="./imagenes/heroe.png" alt="" width="50" draggable="true">
+                        </div>
+                        <div class="avatarItem">
+                            <img src="./imagenes/super-mama.png" alt="" width="50" draggable="true">
+                        </div>
+                        <div class="avatarItem">
+                            <img src="./imagenes/mascara.png" alt="" width="50" draggable="true">
+                        </div>
+                        <div class="avatarItem">
+                            <img src="./imagenes/oscuro.png" alt="" width="50" draggable="true">
+                        </div>
+                        <div class="avatarItem">
+                            <img src="./imagenes/superheroe.png" alt="" width="50" draggable="true">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" id="btn">
+                </div>
+            </form>
+            </div>
+    </main>
+    <script src="./JavaScript/datosUsuarios.js"></script>
+    <script src="./JavaScript/app.js"></script>
+</body>
+</html>
