@@ -1,0 +1,118 @@
+/*CSS del juego*/
+/*Especifico*/
+body{
+    background-color: rgb(230, 227, 227);
+}
+main{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,650px);
+
+}
+input[type="text"]{
+    border: 1px solid rgb(178, 175, 175);
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+form{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: 20px;
+    padding-left: 700px;
+    padding-top: 10px;
+
+}
+form img{
+    display: block;
+    margin: 0px 0px 10px 0px;
+    padding-left: 50px;
+    margin-right: 15px;   
+
+}
+form label{
+    display: block;   
+    margin-bottom: 10px;
+
+}
+/*Id y Clases*/
+#contenedorjuego{
+    display: flex;
+    z-index: 4;
+    width: 550px;
+    background-color: rgb(255, 255, 255);
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    margin-left: 500px;
+    margin-right: 40px;
+    border-radius: 10px ;
+}
+
+#juego{
+    float: left;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 500px;
+    min-height: 400px;
+    margin-right: 10px;
+    margin-left: 20px;
+    padding: 10px 5px 10px 5px;
+    transition: 0.8s;
+}
+.item{
+    margin:5px 5px 5px 5px  ;
+}
+/*Cartas boca abajo*/
+#cartasbocabajo{
+    position: absolute;
+    float: left;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    width: 500px;
+    min-height: 400px;
+    margin-right: 5px;
+    margin-left: 20px;
+    padding: 10px 5px 10px 5px;
+}
+.itembocabajo{
+    margin:5px 5px 5px 5px  ;
+
+}
+.juegoacabado{
+    background-color: rgb(31, 30, 30,0.8);
+    transition: background-color 0.4s ;
+    width: 550px;
+    height: 450px;
+}
+#otravez{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    border-radius: 10px 10px 10px 10px;
+    width: 550px;
+    height: 450px;
+    color: white;
+
+}
+#otravez button{
+    z-index: 1;
+    background-color: white;
+    border: 1px solid white;
+    color: rgb(255, 255, 255) ;
+    width: 100px;
+    height: 40px;
+}
